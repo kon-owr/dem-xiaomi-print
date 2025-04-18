@@ -1,0 +1,22 @@
+﻿<Window x:Class="MyWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="域名选择器" Height="300" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 列表框 -->
+        <ListBox x:Name="DomainListBox" Grid.Row="0" Margin="0,0,0,10" SelectionMode="Single"
+                 DisplayMemberPath="DomainName" />
+
+        <!-- 确认按钮 -->
+        <Button x:Name="ConfirmButton" Grid.Row="1" Content="确认选择" Height="30" Click="ConfirmButton_Click" />
+
+        <!-- 显示选中结果 -->
+        <TextBlock x:Name="ResultTextBlock" Grid.Row="2" Margin="0,10,0,0" FontSize="14" Foreground="Blue" TextWrapping="Wrap" />
+    </Grid>
+</Window>

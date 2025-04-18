@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MyWpfApp.DetailWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="域名详情" Height="600" Width="500">
+        Title="物流标贴打印" Height="600" Width="500">
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/> <!-- 顶部区域占 1/10 高度 -->

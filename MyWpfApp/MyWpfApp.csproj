@@ -6,8 +6,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+	<!-- 确保未引用 WinForms -->
+	<UseWindowsForms>false</UseWindowsForms>
   </PropertyGroup>
-
   <ItemGroup>
     <COMReference Include="BarTender">
       <WrapperTool>tlbimp</WrapperTool>

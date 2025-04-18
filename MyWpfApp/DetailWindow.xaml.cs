@@ -86,5 +86,17 @@ namespace MyWpfApp
             }
         }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 创建 MainWindow 实例
+            MainWindow mainWindow = new MainWindow();
+
+            // 显示 MainWindow
+            mainWindow.Show();
+
+            // 关闭当前窗口
+            this.Close();
+        }
+
     }
 }

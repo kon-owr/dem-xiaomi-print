@@ -8,22 +8,29 @@
             <RowDefinition Height="10*"/> <!-- 底部区域占 10/10 高度 -->
         </Grid.RowDefinitions>
 
-        <!-- 顶部区域：TextBox和Button -->
+        <!-- 顶部区域：TextBox、Button和返回按钮 -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/> <!-- 返回按钮 -->
                 <ColumnDefinition Width="*"/> <!-- TextBox占大部分宽度 -->
-                <ColumnDefinition Width="Auto"/> <!-- Button占必要宽度 -->
+                <ColumnDefinition Width="Auto"/> <!-- 打印按钮 -->
             </Grid.ColumnDefinitions>
             
+            <!-- 返回按钮 -->
+            <Button x:Name="BackButton" Grid.Column="0" 
+                    Content="返回" Width="60" Height="30" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Click="BackButton_Click" />
+
             <!-- 文本框 -->
-            <TextBox x:Name="DomainTextBox" Grid.Column="0" 
-                     FontSize="14" Height="30" Margin="0,0,5,0" 
+            <TextBox x:Name="DomainTextBox" Grid.Column="1" 
+                     FontSize="14" Height="30" Margin="5,0,5,0" 
                      VerticalAlignment="Center" HorizontalAlignment="Stretch"
                      KeyDown="DomainTextBox_KeyDown"
                      TextWrapping="Wrap" />
             
-            <!-- 插入按钮 -->
-            <Button x:Name="InsertButton" Grid.Column="1" 
+            <!-- 打印按钮 -->
+            <Button x:Name="InsertButton" Grid.Column="2" 
                     Content="打印" Width="60" Height="30" 
                     VerticalAlignment="Center" HorizontalAlignment="Right"
                     Click="InsertButton_Click" />

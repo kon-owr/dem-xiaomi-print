@@ -15,7 +15,6 @@ namespace MyWpfApp
 
         private void LoadDomainList()
         {
-            // 模拟域名数据
             // 将GetAllFolders获取到的文件夹路径列表转为domains列表
             var folders = GetAllFolders(@"\\10.70.51.221\xiaomi\P\物流标贴");
 
@@ -56,7 +55,7 @@ namespace MyWpfApp
 
         public static List<FolderInfo> GetAllFolders(string path)
         {
-            // 获取文件夹路径和文件夹名称，并存储在结构体中
+            // 获取文件夹路径和文件夹名称
             List<FolderInfo> folders = new List<FolderInfo>();
             try
             {
@@ -76,17 +75,11 @@ namespace MyWpfApp
         }
     }
 
-    // 域名类
-    public class Domain
-    {
-        public string DomainName { get; set; }
-    }
-
     // 文件信息类
     public class FolderInfo
     {
-        public string FolderPath { get; set; }
-        public string FolderName { get; set; }
+        public required string FolderPath { get; set; }
+        public required string FolderName { get; set; }
     }
 
 }

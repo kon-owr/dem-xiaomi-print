@@ -11,7 +11,6 @@ namespace MyWpfApp
         public DetailWindow(FolderInfo folderInfo)
         {
             InitializeComponent();
-
             folderInfo1 = folderInfo;
             // 设置文本框显示选中的域名
             DomainTextBlock.Text = this.folderInfo1.FolderName;
@@ -22,20 +21,21 @@ namespace MyWpfApp
         {
             if (e.Key == Key.Enter)
             {
-                InsertTextToTextBlock();
+                InsertTextToTextBlock(DomainTextBox.Text);
+                Print(DomainTextBox.Text);
             }
         }
 
         // 点击按钮时，将内容插入到 TextBlock 的下一行
         private void InsertButton_Click(object sender, RoutedEventArgs e)
         {
-            InsertTextToTextBlock();
+            InsertTextToTextBlock(DomainTextBox.Text);
+            Print(DomainTextBox.Text);
         }
 
         // 插入内容到 TextBlock 的方法
-        private void InsertTextToTextBlock()
+        private void InsertTextToTextBlock(string inputText)
         {
-            string inputText = DomainTextBox.Text;
 
             if (!string.IsNullOrWhiteSpace(inputText))
             {
@@ -45,13 +45,12 @@ namespace MyWpfApp
                 // 清空 TextBox
                 DomainTextBox.Clear();
             }
-
-            // 发送打印命令
-            Print(inputText);
         }
 
         public void Print(string text)
         {
+            // 发送信息到TextBlock
+            InsertTextToTextBlock("正在打印......");
             // 获取系统默认打印机名称
             string printName = "";
             string query = "SELECT * FROM Win32_Printer WHERE Default = true";
@@ -77,12 +76,12 @@ namespace MyWpfApp
             if (Flag)
             {
                 // 将新内容追加到 TextBlock 的下一行
-                DomainTextBlock.Text += "\n" + "打印成功";
+                InsertTextToTextBlock("打印成功");
             }
             else
             {
                 // 将新内容追加到 TextBlock 的下一行
-                DomainTextBlock.Text += "\n" + "打印失败";
+                InsertTextToTextBlock("打印失败");
             }
         }
 

@@ -29,8 +29,8 @@ namespace MyWpfApp
         // 点击按钮时，将内容插入到 TextBlock 的下一行
         private void InsertButton_Click(object sender, RoutedEventArgs e)
         {
-            InsertTextToTextBlock(DomainTextBox.Text);
             Print(DomainTextBox.Text);
+            InsertTextToTextBlock(DomainTextBox.Text);
         }
 
         // 插入内容到 TextBlock 的方法

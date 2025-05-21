@@ -18,12 +18,13 @@ namespace MyWpfApp
             // 将GetAllFolders获取到的文件夹路径列表转为domains列表
             var folders = GetAllFolders(@"\\10.70.51.221\xiaomi\P\物流标贴");
 
-
-  
-
             // 将域名列表绑定到 ListBox
             DomainListBox.ItemsSource = folders;
-            DomainListBox.DisplayMemberPath = "FolderName"; // 显示文件夹名称
+        }
+
+        public void DomainListBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ConfirmButton_Click(ConfirmButton, new RoutedEventArgs());
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)

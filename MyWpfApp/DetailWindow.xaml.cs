@@ -21,8 +21,8 @@ namespace MyWpfApp
         {
             if (e.Key == Key.Enter)
             {
-                InsertTextToTextBlock(DomainTextBox.Text);
                 Print(DomainTextBox.Text);
+                InsertTextToTextBlock(DomainTextBox.Text);
             }
         }
 

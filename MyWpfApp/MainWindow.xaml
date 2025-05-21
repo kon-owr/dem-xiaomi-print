@@ -11,7 +11,7 @@
 
         <!-- 列表框 -->
         <ListBox x:Name="DomainListBox" Grid.Row="0" Margin="0,0,0,10" SelectionMode="Single"
-                 DisplayMemberPath="DomainName" />
+                 DisplayMemberPath="FolderName" MouseDoubleClick="DomainListBox_MouseDoubleClick"/>
 
         <!-- 确认按钮 -->
         <Button x:Name="ConfirmButton" Grid.Row="1" Content="确认选择" Height="30" Click="ConfirmButton_Click" />
